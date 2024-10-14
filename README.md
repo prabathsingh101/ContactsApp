@@ -2,6 +2,20 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.6.
 
+Listing Of Projects.
+1. Add angular materials
+2. Bootstrap css
+3. NGX Toaster for messaging
+
+Note- I have communicate parent to child or child to paent
+      Step 1.
+            I have created one contact forms and sending data parent to child using @Input decorator for grid binding as soon as data will be save.
+      Step 2.
+            From grod view editing data using @Output decorator populate the data in the textfield and updated.      
+
+Build- npm install for dependencies 
+      ng serve --o            
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
