@@ -1,60 +1,69 @@
 <form [formGroup]="forms" (ngSubmit)="onSubmit()">
 
-  <div class="d-flex flex-row row">
-    <mat-form-field class="example-full-width">
-      <input matInput placeholder="First name" #firstname formControlName="firstname"
-        [(ngModel)]="contactsList.firstName">
-      <mat-hint align="end">
-        {{firstname.value.length}} / 15
-      </mat-hint>
-      <mat-error *ngIf="getfirstName.errors?.required">
-        First name is required.
-      </mat-error>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-subtitle>{{title| uppercase}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="d-flex flex-row row">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="First name" #firstname formControlName="firstname"
+            [(ngModel)]="contactsList.firstName">
+          <mat-hint align="end">
+            {{firstname.value.length}} / 15
+          </mat-hint>
+          <mat-error *ngIf="getfirstName.errors?.required">
+            First name is required.
+          </mat-error>
 
-      <mat-error *ngIf="getfirstName.errors?.maxlength">
-        A maximum length upto 15 characters.
-      </mat-error>
-    </mat-form-field>
+          <mat-error *ngIf="getfirstName.errors?.maxlength">
+            A maximum length upto 15 characters.
+          </mat-error>
+        </mat-form-field>
 
-  </div>
-  <div class="d-flex flex-row row">
-    <mat-form-field class="example-full-width">
-      <input matInput placeholder="Last name" #lastname [(ngModel)]="contactsList.lastName" formControlName="lastname"
-        name="lastname">
-      <mat-hint align="end">
-        {{lastname.value.length}} / 15
-      </mat-hint>
-      <mat-error *ngIf="getlastName.errors?.required">
-        Last name is required.
-      </mat-error>
+      </div>
+      <div class="d-flex flex-row row">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Last name" #lastname [(ngModel)]="contactsList.lastName"
+            formControlName="lastname" name="lastname">
+          <mat-hint align="end">
+            {{lastname.value.length}} / 15
+          </mat-hint>
+          <mat-error *ngIf="getlastName.errors?.required">
+            Last name is required.
+          </mat-error>
 
-      <mat-error *ngIf="getlastName.errors?.maxlength">
-        A maximum length upto 15 characters.
-      </mat-error>
-    </mat-form-field>
+          <mat-error *ngIf="getlastName.errors?.maxlength">
+            A maximum length upto 15 characters.
+          </mat-error>
+        </mat-form-field>
 
-  </div>
-  <div class="d-flex flex-row row">
-    <mat-form-field class="example-full-width">
-      <input matInput placeholder="Email" #emails [(ngModel)]="contactsList.email" formControlName="email" name="email">
-      <mat-hint align="end">
-        {{emails.value.length}} / 100
-      </mat-hint>
-      <mat-error *ngIf="getemail.errors?.required">
-        Email is required.
-      </mat-error>
-      <mat-error *ngIf="getemail.errors?.maxlength">
-        A maximum length upto 100 characters.
-      </mat-error>
-      <mat-error *ngIf="forms.controls['email'].hasError('pattern') && forms.controls['email'].touched">
-        Email is not valid !</mat-error>
-    </mat-form-field>
-  </div>
+      </div>
+      <div class="d-flex flex-row row">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Email" #emails [(ngModel)]="contactsList.email" formControlName="email"
+            name="email">
+          <mat-hint align="end">
+            {{emails.value.length}} / 100
+          </mat-hint>
+          <mat-error *ngIf="getemail.errors?.required">
+            Email is required.
+          </mat-error>
+          <mat-error *ngIf="getemail.errors?.maxlength">
+            A maximum length upto 100 characters.
+          </mat-error>
+          <mat-error *ngIf="forms.controls['email'].hasError('pattern') && forms.controls['email'].touched">
+            Email is not valid !</mat-error>
+        </mat-form-field>
+      </div>
 
-  <div class="col-md-6">
-    <button mat-raised-button color="accent">Cancel</button>&nbsp;
-    <button mat-raised-button color="primary">Save</button>&nbsp;
-  </div>
+      <div class="col-md-6">
+        <button mat-raised-button color="accent">Cancel</button>&nbsp;
+        <button mat-raised-button color="primary">Save</button>&nbsp;
+      </div>
+    </mat-card-content>
+  </mat-card>
+
 </form>
 
 
