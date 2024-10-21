@@ -138,6 +138,14 @@ export class CreateContactsComponent implements OnInit {
 
   reset() {
     this.forms.reset();
+    // this.forms.get('firstname').setValidators(null);
+    // this.forms.get('firstname').setErrors(null);
+
+    // this.forms.get('lastname').setValidators(null);
+    // this.forms.get('lastname').setErrors(null);
+
+    // this.forms.get('email').setValidators(null);
+    // this.forms.get('email').setErrors(null);
     this.contactsList.id = 0;
     this.SendChildToParent.emit(this.svc.GetAllContact());
   }
