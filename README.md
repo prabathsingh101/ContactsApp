@@ -11,7 +11,9 @@ Note- I have communicate parent to child or child to paent
       Step 1.
             I have created one contact forms and sending data parent to child using @Input decorator for grid binding as soon as data will be save.
       Step 2.
-            From grod view editing data using @Output decorator populate the data in the textfield and updated.      
+            From grod view editing data using @Output decorator populate the data in the textfield and updated.   
+      step 3.
+            select data on grid row selection and edit   
 
 Build- npm install for dependencies 
       ng serve --o            
