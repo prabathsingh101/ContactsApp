@@ -12,3 +12,11 @@ th.mat-sort-header-sorted {
 .example-full-width {
   width: 100%;
 }
+.mat-mdc-row:hover .mat-mdc-cell {
+  background-color: aqua;
+  cursor: pointer;
+}
+
+.demo-row-is-clicked {
+  font-weight: normal;
+}

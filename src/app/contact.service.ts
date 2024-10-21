@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Contacts } from './contact.model';
 
-
 @Injectable({
   providedIn: 'root',
 })

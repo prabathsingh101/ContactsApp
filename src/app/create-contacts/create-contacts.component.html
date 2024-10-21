@@ -58,15 +58,15 @@
       </div>
 
       <div class="col-md-6">
-        <button mat-raised-button color="accent">Cancel</button>&nbsp;
-        <button mat-raised-button color="primary">Save</button>&nbsp;
+        <button mat-raised-button color="accent" (click)="reset()">Cancel</button>&nbsp;
+        <button mat-raised-button color="primary" [disabled]="!forms.valid">Save</button>&nbsp;
       </div>
     </mat-card-content>
   </mat-card>
 
 </form>
 
-
+<!-- {{contactsList | json}} -->
 
 <!-- <div class="spinner-container" *ngIf="loading">
   <mat-spinner></mat-spinner>

@@ -39,6 +39,8 @@ export class AppComponent implements OnInit {
   dialog = inject(MatDialog);
   toast = inject(ToastrService);
 
+  public mydata: Contacts[] = [];
+
   displayedColumns: string[] = [
     'id',
     'firstName',
@@ -50,20 +52,18 @@ export class AppComponent implements OnInit {
 
   contactsList: Contacts[] = [];
 
-  list:any=[];
+  list: Contacts[] = [];
 
   dataSource: any;
 
-  name="test"
+  name = 'test';
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-
-
   editContact(id: number) {
     this.svc.GetContactsById(id).subscribe((res) => {
-      this.list = res;
+      this.list.push(res);
     });
   }
   deletePromptPopup(id: number) {
@@ -73,6 +73,7 @@ export class AppComponent implements OnInit {
         timeOut: 3000,
       });
       this.getAll();
+      this.list = [];
     });
   }
 
@@ -105,5 +106,10 @@ export class AppComponent implements OnInit {
           this.dataSource.sort = this.sort;
         }
       });
+  }
+
+  clickedRows(data: any) {
+    this.list = data;
+    console.log('mycontactslist', this.list);
   }
 }

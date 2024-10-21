@@ -31,6 +31,7 @@ export class CreateContactsComponent implements OnInit {
   @Output() SendChildToParent: EventEmitter<any> = new EventEmitter();
 
   @Input() contactsList: any;
+  //@Input() myContactsList: any;
 
   isBool = false;
 
@@ -47,6 +48,7 @@ export class CreateContactsComponent implements OnInit {
   forms: any = FormGroup;
 
   postContacts!: Contacts;
+  postContacts1!: Contacts;
 
   getContacts: Contacts[] = [];
 
@@ -88,6 +90,7 @@ export class CreateContactsComponent implements OnInit {
         email: this.forms.value.email,
         id: this.contactsList.id ? this.contactsList.id : 0,
       };
+
       if (this.contactsList.id > 0) {
         forkJoin({
           postData: this.svc.PUT(this.contactsList.id, this.postContacts),
@@ -114,6 +117,7 @@ export class CreateContactsComponent implements OnInit {
           if (res) {
             this.SendChildToParent.emit(res.getData);
             this.forms.reset();
+            this.contactsList.id = 0;
             this.toast.success(res.postData.message, 'Saved.', {
               timeOut: 3000,
             });
@@ -129,5 +133,12 @@ export class CreateContactsComponent implements OnInit {
 
   ngOnInit(): void {
     this.createForm();
+  }
+  test() {}
+
+  reset() {
+    this.forms.reset();
+    this.contactsList.id = 0;
+    this.SendChildToParent.emit(this.svc.GetAllContact());
   }
 }
